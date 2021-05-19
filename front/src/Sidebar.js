@@ -1,14 +1,27 @@
 import React from 'react'
 import SidebarOptions from './SidebarOptions'
 import YouTubeIcon from '@material-ui/icons/YouTube';
+import ComputerIcon from '@material-ui/icons/Computer';
+import BusinessIcon from '@material-ui/icons/Business';
+import { Link } from 'react-router-dom';
+
+
 
 export default function Sidebar() {
   return (
-    <div className="sidebar">
-        <SidebarOptions text="YouTube" Icon={YouTubeIcon} />
-        <SidebarOptions text="Tech" Icon={YouTubeIcon}/>
-        <SidebarOptions text="Daily" Icon={YouTubeIcon}/>
-    </div>
+      <div className="sidebar">
+        <Link to="/Tech">
+          <SidebarOptions text="Tech" Icon={ComputerIcon}/>
+        </Link>
+
+        <Link exact to="/YouTube">
+          <SidebarOptions text="YouTube" Icon={YouTubeIcon} />
+        </Link>
+
+        <Link to="/Daily">
+          <SidebarOptions text="Daily" Icon={BusinessIcon}/>
+        </Link>
+      </div>
   )
 }
 
