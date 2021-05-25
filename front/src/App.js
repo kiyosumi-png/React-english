@@ -1,6 +1,6 @@
 import React from 'react';
-import Sidebar from './Sidebar';
-import Feed from './Feed';
+import Sidebar from './components/Sidebar';
+import Feed from './components/Feed';
 import './App.css';
 import { BrowserRouter as Router} from 'react-router-dom';
 
@@ -8,9 +8,9 @@ import { BrowserRouter as Router} from 'react-router-dom';
 function App() {
   return ( 
     <Router>
-      <div className="App">
-          <Sidebar />
-          <Feed />
+      <div className="app">
+        <Sidebar />
+        <Feed />
       </div>
     </Router>
   );
