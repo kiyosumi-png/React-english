@@ -5,9 +5,10 @@ export const WordContext = createContext();
 
 const WordContextProvider = (props) => {
   const [words, dispatch] = useReducer(wordReducer, []);
+
   return(
     <WordContext.Provider value={{words, dispatch}}>
-      { props.children }
+       { props.children }
     </WordContext.Provider>
   )
 }
