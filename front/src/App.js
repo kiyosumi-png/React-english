@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from './components/Sidebar';
 import Feed from './components/Feed';
+import WordContextProvider from './context/WordContext'
 import './App.css';
 import { BrowserRouter as Router} from 'react-router-dom';
 
@@ -9,8 +10,10 @@ function App() {
   return ( 
     <Router>
       <div className="app">
-        <Sidebar />
-        <Feed />
+        <WordContextProvider>
+          <Sidebar />
+          <Feed />
+        </WordContextProvider>
       </div>
     </Router>
   );
