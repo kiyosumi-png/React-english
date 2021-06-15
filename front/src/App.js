@@ -4,7 +4,7 @@ import Feed from './components/Feed';
 import WordContextProvider from './context/WordContext';
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
-import AddButton from './components/header/menue/AddButton';
+import Header from './components/Header';
 
 function App() {
     return (
@@ -13,7 +13,7 @@ function App() {
                 <WordContextProvider>
                     <Sidebar />
                     <Feed />
-                    <AddButton />
+                    <Header />
                 </WordContextProvider>
             </div>
         </Router>
