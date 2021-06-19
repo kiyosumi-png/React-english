@@ -1,10 +1,14 @@
-import React from 'react'
+import styled from 'styled-components';
+import Text from './Text';
 
 export default function Tech() {
-  return (
-    <div>
-      Please write vocabulary related to technology
-    </div>
-  )
+    return (
+        <Container>
+            <Text />
+        </Container>
+    );
 }
 
+const Container = styled.div`
+    background-color: red;
+`;

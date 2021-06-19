@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import CreateIcon from '@material-ui/icons/Create';
 import CloseIcon from '@material-ui/icons/Close';
 
-function AddButton() {
+export default function AddButton() {
     const [burgerStatus, setBurgerStatus] = useState(false);
 
     return (
@@ -23,8 +23,6 @@ function AddButton() {
         </div>
     );
 }
-
-export default AddButton;
 
 const Close = styled(CloseIcon)`
     cursor: pointer;

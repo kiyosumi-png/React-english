@@ -1,24 +1,27 @@
-// import React from 'react'
-// import SidebarOptions from './SidebarOptions'
-// import YouTubeIcon from '@material-ui/icons/YouTube';
-// import ComputerIcon from '@material-ui/icons/Computer';
-// import BusinessIcon from '@material-ui/icons/Business';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import Title from './sidebar/Title';
 
-// export default function Sidebar() {
-//   return (
-//       <div className="sidebar">
-//         <Link to="/Tech" style={{ textDecoration: 'none' }} >
-//           <SidebarOptions text="Tech" Icon={ComputerIcon}/>
-//         </Link>
+export default function Sidebar() {
+    return (
+        <Container>
+            <Link to="/Tech" style={{ textDecoration: 'none' }}>
+                <Title text="Tech" />
+            </Link>
 
-//         <Link exact to="/YouTube" style={{ textDecoration: 'none' }} >
-//           <SidebarOptions text="YouTube" Icon={YouTubeIcon} />
-//         </Link>
+            <Link to="/YouTube" style={{ textDecoration: 'none' }}>
+                <Title text="YouTube" />
+            </Link>
 
-//         <Link to="/Daily" style={{ textDecoration: 'none' }} >
-//           <SidebarOptions text="Daily" Icon={BusinessIcon}/>
-//         </Link>
-//       </div>
-//   )
-// }
+            <Link to="/Daily" style={{ textDecoration: 'none' }}>
+                <Title text="Daily" />
+            </Link>
+        </Container>
+    );
+}
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+`;

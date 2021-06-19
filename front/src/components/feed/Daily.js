@@ -1,11 +1,12 @@
-import React from 'react'
+import styled from 'styled-components';
+import Text from './Text';
 
 export default function Daily() {
-  return (
-    <div>
-      Please write vocabulary related to Daily conversation.
-    </div>
-  )
+    return (
+        <Container>
+            <Text />
+        </Container>
+    );
 }
 
-
+const Container = styled.div``;
