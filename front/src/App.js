@@ -1,19 +1,18 @@
-import React from 'react';
-import Sidebar from './components/Sidebar';
-import Feed from './components/Feed';
-import WordContextProvider from './context/WordContext';
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
+import WordContextProvider from './context/WordContext';
 import Header from './components/Header';
+import Sidebar from './components/sidebar/Sidebar';
+import Feed from './components/Feed';
 
 function App() {
     return (
         <Router>
             <div className="app">
                 <WordContextProvider>
+                    <Header />
                     <Sidebar />
                     <Feed />
-                    <Header />
                 </WordContextProvider>
             </div>
         </Router>

@@ -1,7 +1,7 @@
 :root {
-  --button-color: #00BFFF;
+    --button-color: #00bfff;
 }
 
 .app {
-  display: flex;
+    display: flex;
 }
