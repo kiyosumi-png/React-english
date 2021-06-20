@@ -1,15 +1,13 @@
 import styled from 'styled-components';
 import AddButton from './AddButton';
 
-function Menu() {
+export default function Menu() {
     return (
         <Container>
             <AddButton />
         </Container>
     );
 }
-
-export default Menu;
 
 const Container = styled.div`
     display: flex;

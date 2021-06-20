@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
-function Title({ text }) {
+export default function Title({ text }) {
     return <TitleDesign>{text}</TitleDesign>;
 }
-
-export default Title;
 
 const TitleDesign = styled.div`
     background-color: #c7f2e6;
