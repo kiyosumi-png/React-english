@@ -1,10 +1,18 @@
 import styled from 'styled-components';
-import AddButton from './AddButton';
+import { useState } from 'react';
+import { FlagContext } from '../../../context/FlagContext';
+import InputMolecule from '../menu_contents_molecule/InputMolecule';
+import AddButton from './InputButton';
 
 export default function Menu() {
+    const [addStatus, setAddStatus] = useState(false);
+
     return (
         <Container>
-            <AddButton />
+            <FlagContext.Provider value={{ addStatus, setAddStatus }}>
+                <AddButton />
+                <InputMolecule />
+            </FlagContext.Provider>
         </Container>
     );
 }

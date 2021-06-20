@@ -9,5 +9,5 @@ export default function Icon({ Icon }) {
 }
 
 const IconDesign = styled.div`
-    border-radius: 30%;
+    cursor: pointer;
 `;
