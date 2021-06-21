@@ -1,34 +1,45 @@
-import { useContext, useState } from 'react';
-import { WordContext } from '../../../context/WordContext';
+import { useState } from 'react';
 import db from '../../../firebase';
 import styled from 'styled-components';
 import Button from '../Button';
 
 function InputMolecule2() {
-    const { dispatch } = useContext(WordContext);
     const [english, setEnglish] = useState('');
     const [japanese, setJapanese] = useState('');
     const [type, setType] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch({
-            type: 'addWord',
-            word: {
-                english,
-                japanese,
-            },
-        });
 
-        db.collection('youtube-words').add({
-            english: english,
-            japanese: japanese,
-            type: type,
-        });
+        switch (type) {
+            case 'tech':
+                db.collection('tech-words').add({
+                    english: english,
+                    japanese: japanese,
+                });
+                break;
 
-        setEnglish();
-        setJapanese();
-        setType();
+            case 'youtube':
+                db.collection('youtube-words').add({
+                    english: english,
+                    japanese: japanese,
+                });
+                break;
+
+            case 'daily':
+                db.collection('daily-words').add({
+                    english: english,
+                    japanese: japanese,
+                });
+                break;
+
+            default:
+                alert('カテゴリーがありません');
+        }
+
+        setEnglish('');
+        setJapanese('');
+        setType('');
     };
 
     return (
