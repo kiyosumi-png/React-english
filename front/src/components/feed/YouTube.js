@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import db from '../../firebase';
 import Text from './Text';
 
@@ -22,14 +23,12 @@ export default function YouTube() {
     const words = useYouTubeWords();
 
     return (
-        <div className="YouTube">
-            <h2>Please write vocabulary related to YouTube</h2>
+        <Container>
             {words.map((word) => (
-                <ul>
-                    <li>{word.english}</li>
-                    <li>{word.japanese}</li>
-                </ul>
+                <Text english={word.english} japanese={word.japanese} />
             ))}
-        </div>
+        </Container>
     );
 }
+
+const Container = styled.div``;
