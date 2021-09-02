@@ -24,6 +24,7 @@ export default function Daily() {
 
     return (
         <Container>
+            <h1>daily</h1>
             {words.map((word, index) => (
                 <Text
                     english={word.english}
