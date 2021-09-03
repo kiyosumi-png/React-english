@@ -1,7 +1,8 @@
-import styled from 'styled-components';
 import { useContext } from 'react';
-import { FlagContext } from '../../../context/FlagContext';
+import styled from 'styled-components';
 import CloseIcon from '@material-ui/icons/Close';
+
+import { FlagContext } from '../../../context/FlagContext';
 import InputMolecule2 from './InputMolecule2';
 
 export default function InputMolecule() {
