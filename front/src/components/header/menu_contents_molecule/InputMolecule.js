@@ -1,17 +1,17 @@
-import styled from 'styled-components';
 import { useContext } from 'react';
-import { FlagContext } from '../../../context/FlagContext';
+import styled from 'styled-components';
 import CloseIcon from '@material-ui/icons/Close';
+
+import { FlagContext } from '../../../context/FlagContext';
 import InputMolecule2 from './InputMolecule2';
 
 export default function InputMolecule() {
-    const { setAddStatus } = useContext(FlagContext);
-    const { addStatus } = useContext(FlagContext);
+    const { flag, setFlag } = useContext(FlagContext);
 
     return (
-        <Container status={addStatus}>
+        <Container status={flag}>
             <CloseContainer>
-                <Close onClick={() => setAddStatus(false)} />
+                <Close onClick={() => setFlag(false)} />
             </CloseContainer>
             <InputMolecule2 />
         </Container>

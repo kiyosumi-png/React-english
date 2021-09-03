@@ -1,18 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
 import { Route } from 'react-router-dom';
+import styled from 'styled-components';
+
 import YouTube from './feed/YouTube';
 import Tech from './feed/Tech';
 import Daily from './feed/Daily';
-// import PostBox from './feed/PostBox';
 
 export default function Feed() {
     return (
         <Container>
-            {/* <PostBox /> */}
-            <Route exact path="/Tech" component={Tech} />
-            <Route exact path="/YouTube" component={YouTube} />
-            <Route exact path="/Daily" component={Daily} />
+            <Route exact path="/tech" component={Tech} />
+            <Route exact path="/youtube" component={YouTube} />
+            <Route exact path="/daily" component={Daily} />
         </Container>
     );
 }

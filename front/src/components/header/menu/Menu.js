@@ -1,26 +1,24 @@
 import styled from 'styled-components';
-import { useState } from 'react';
-import { FlagContext } from '../../../context/FlagContext';
-import InputMolecule from '../menu_contents_molecule/InputMolecule';
-import AddButton from './InputButton';
 import { Link } from 'react-router-dom';
 
-export default function Menu() {
-    const [addStatus, setAddStatus] = useState(false);
+import FlagContextProvider from '../../../context/FlagContext';
+import InputMolecule from '../menu_contents_molecule/InputMolecule';
+import AddButton from './InputButton';
 
+export default function Menu() {
     return (
         <Container>
-            <FlagContext.Provider value={{ addStatus, setAddStatus }}>
+            <FlagContextProvider>
                 <AddButton />
                 <InputMolecule />
+            </FlagContextProvider>
 
-                <Link to="/auth/sign_in" style={{ textDecoration: 'none' }}>
-                    <p>sign in</p>
-                </Link>
-                <Link to="/auth/sign_up" style={{ textDecoration: 'none' }}>
-                    <p>sign up</p>
-                </Link>
-            </FlagContext.Provider>
+            <Link to="/auth/sign_in" style={{ textDecoration: 'none' }}>
+                <p>sign in</p>
+            </Link>
+            <Link to="/auth/sign_up" style={{ textDecoration: 'none' }}>
+                <p>sign up</p>
+            </Link>
         </Container>
     );
 }
