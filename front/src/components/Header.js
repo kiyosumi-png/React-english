@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Menu } from './header/index';
+import Menu from './header/menu/Menu';
 
 function Header() {
     return (

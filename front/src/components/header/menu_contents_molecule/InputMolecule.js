@@ -3,17 +3,18 @@ import styled from 'styled-components';
 import CloseIcon from '@material-ui/icons/Close';
 
 import { FlagContext } from '../../../context/FlagContext';
-import InputMolecule2 from './InputMolecule2';
+import PostBox from './PostBox';
+import Icon from '../Icon';
 
 export default function InputMolecule() {
     const { flag, setFlag } = useContext(FlagContext);
 
     return (
         <Container status={flag}>
-            <CloseContainer>
-                <Close onClick={() => setFlag(false)} />
+            <CloseContainer onClick={() => setFlag(false)}>
+                <Icon Icon={CloseIcon} />
             </CloseContainer>
-            <InputMolecule2 />
+            <PostBox />
         </Container>
     );
 }
@@ -35,10 +36,6 @@ const Container = styled.div`
             font-weight: 600;
         }
     }
-`;
-
-const Close = styled(CloseIcon)`
-    cursor: pointer;
 `;
 
 const CloseContainer = styled.div``;

@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import styled from 'styled-components';
 import db from '../../../firebase';
-
+import styled from 'styled-components';
 import Button from '../Button';
 
-function InputMolecule2() {
+function PostBox() {
     const [english, setEnglish] = useState('');
     const [japanese, setJapanese] = useState('');
     const [type, setType] = useState('');
@@ -70,7 +69,7 @@ function InputMolecule2() {
     );
 }
 
-export default InputMolecule2;
+export default PostBox;
 
 const Container = styled.div`
     form {

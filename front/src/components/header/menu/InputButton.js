@@ -2,10 +2,10 @@ import { useContext } from 'react';
 import styled from 'styled-components';
 import CreateIcon from '@material-ui/icons/Create';
 
-import { Icon } from '../index';
+import Icon from '../Icon';
 import { FlagContext } from '../../../context/FlagContext';
 
-export default function InputButton() {
+export default function CreateButton() {
     const { setFlag } = useContext(FlagContext);
 
     return (
