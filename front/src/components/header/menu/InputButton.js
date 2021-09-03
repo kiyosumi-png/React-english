@@ -5,11 +5,11 @@ import CreateIcon from '@material-ui/icons/Create';
 import { FlagContext } from '../../../context/FlagContext';
 
 export default function InputButton() {
-    const { setAddStatus } = useContext(FlagContext);
+    const { setFlag } = useContext(FlagContext);
 
     return (
         <div>
-            <MenuIconContainer onClick={() => setAddStatus(true)}>
+            <MenuIconContainer onClick={() => setFlag(true)}>
                 <Icon Icon={CreateIcon} />
             </MenuIconContainer>
         </div>

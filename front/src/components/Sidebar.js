@@ -5,15 +5,15 @@ import Title from './sidebar/Title';
 export default function Sidebar() {
     return (
         <Container>
-            <Link to="/Tech" style={{ textDecoration: 'none' }}>
+            <Link to="/tech" style={{ textDecoration: 'none' }}>
                 <Title text="Tech" />
             </Link>
 
-            <Link to="/YouTube" style={{ textDecoration: 'none' }}>
+            <Link to="/youtube" style={{ textDecoration: 'none' }}>
                 <Title text="YouTube" />
             </Link>
 
-            <Link to="/Daily" style={{ textDecoration: 'none' }}>
+            <Link to="/daily" style={{ textDecoration: 'none' }}>
                 <Title text="Daily" />
             </Link>
         </Container>

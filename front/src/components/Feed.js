@@ -10,9 +10,9 @@ export default function Feed() {
     return (
         <Container>
             {/* <PostBox /> */}
-            <Route exact path="/Tech" component={Tech} />
-            <Route exact path="/YouTube" component={YouTube} />
-            <Route exact path="/Daily" component={Daily} />
+            <Route exact path="/tech" component={Tech} />
+            <Route exact path="/youtube" component={YouTube} />
+            <Route exact path="/daily" component={Daily} />
         </Container>
     );
 }
