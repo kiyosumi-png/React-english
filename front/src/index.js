@@ -3,17 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import SignIn from './components/userAuth/SignIn';
-import SignUp from './components/userAuth/SignUp';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Router>
-            <App />
-            <Route exact path="/auth/sign_in" component={SignIn} />
-            <Route exact path="/auth/sign_up" component={SignUp} />
-        </Router>
+        <App />
     </React.StrictMode>,
     document.getElementById('root')
 );
