@@ -13,10 +13,10 @@ export default function Menu() {
                 <InputMolecule />
             </FlagContextProvider>
 
-            <Link to="/auth/sign_in" style={{ textDecoration: 'none' }}>
+            <Link to="/sign_in" style={{ textDecoration: 'none' }}>
                 <p>sign in</p>
             </Link>
-            <Link to="/auth/sign_up" style={{ textDecoration: 'none' }}>
+            <Link to="/sign_up" style={{ textDecoration: 'none' }}>
                 <p>sign up</p>
             </Link>
         </Container>
