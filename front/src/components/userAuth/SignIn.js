@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Link } from 'react-router-dom';
+import firebaseApp from '../../firebase';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -30,7 +31,14 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+const UserSignIn = (email, password) => {
+    firebaseApp.auth().signInWithEmailAndPassword(email, password);
+};
+
 export default function SignIn() {
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+
     const classes = useStyles();
 
     return (
@@ -43,7 +51,11 @@ export default function SignIn() {
                 <Typography component="h1" variant="h5">
                     Sign in
                 </Typography>
-                <form className={classes.form} noValidate>
+                <form
+                    className={classes.form}
+                    noValidate
+                    onSubmit={() => UserSignIn(email, password)}
+                >
                     <TextField
                         variant="outlined"
                         margin="normal"
@@ -54,6 +66,8 @@ export default function SignIn() {
                         name="email"
                         autoComplete="email"
                         autoFocus
+                        value={email}
+                        onChange={(e) => setEmail(e.currentTarget.value)}
                     />
                     <TextField
                         variant="outlined"
@@ -65,6 +79,8 @@ export default function SignIn() {
                         type="password"
                         id="password"
                         autoComplete="current-password"
+                        value={password}
+                        onChange={(e) => setPassword(e.currentTarget.value)}
                     />
                     <Button
                         type="submit"
