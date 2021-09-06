@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Link } from 'react-router-dom';
-//import { auth } from '../../firebase';
+import firebaseApp from '../../firebase';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -31,16 +31,15 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function SignUp() {
-    const classes = useStyles();
-    const [userInfo, setUserInfo] = useState({
-        'example.com': 'email',
-        examplePassword: 'password',
-    });
+const SendEmailAndPasswordToFirebase = (email, password) => {
+    firebaseApp.auth().createUserWithEmailAndPassword(email, password);
+};
 
-    const SendEmailAndPasswordToFirebase = () => {
-        console.log(userInfo.email, userInfo.password);
-    };
+export default function SignUp() {
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+
+    const classes = useStyles();
 
     return (
         <Container component="main" maxWidth="xs">
@@ -52,7 +51,13 @@ export default function SignUp() {
                 <Typography component="h1" variant="h5">
                     Sign up
                 </Typography>
-                <form className={classes.form} noValidate>
+                <form
+                    className={classes.form}
+                    noValidate
+                    onSubmit={() =>
+                        SendEmailAndPasswordToFirebase(email, password)
+                    }
+                >
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
                             <TextField
@@ -63,9 +68,9 @@ export default function SignUp() {
                                 label="Email Address"
                                 name="email"
                                 autoComplete="email"
-                                value={userInfo.email}
+                                value={email}
                                 onChange={(e) =>
-                                    setUserInfo(e.currentTarget.value)
+                                    setEmail(e.currentTarget.value)
                                 }
                             />
                         </Grid>
@@ -79,9 +84,9 @@ export default function SignUp() {
                                 type="password"
                                 id="password"
                                 autoComplete="current-password"
-                                value={userInfo.password}
+                                value={password}
                                 onChange={(e) =>
-                                    setUserInfo(e.currentTarget.value)
+                                    setPassword(e.currentTarget.value)
                                 }
                             />
                         </Grid>
@@ -92,7 +97,6 @@ export default function SignUp() {
                         variant="contained"
                         color="primary"
                         className={classes.submit}
-                        onClick={SendEmailAndPasswordToFirebase}
                     >
                         Sign Up
                     </Button>
