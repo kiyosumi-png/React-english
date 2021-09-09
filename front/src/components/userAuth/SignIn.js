@@ -32,7 +32,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const UserSignIn = (email, password) => {
-    firebaseApp.auth().signInWithEmailAndPassword(email, password);
+    firebaseApp
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            localStorage.setItem('user', userCredential);
+        })
+        .catch((error) => {
+            console.log(error);
+            localStorage.setItem('error', error);
+        });
 };
 
 export default function SignIn() {
