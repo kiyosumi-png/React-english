@@ -25,8 +25,12 @@ export default function YouTube() {
 
     return (
         <Container>
-            {words.map((word) => (
-                <Text english={word.english} japanese={word.japanese} />
+            {words.map((word, index) => (
+                <Text
+                    english={word.english}
+                    japanese={word.japanese}
+                    key={index}
+                />
             ))}
         </Container>
     );
