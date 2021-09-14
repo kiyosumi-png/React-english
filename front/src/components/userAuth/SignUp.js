@@ -1,11 +1,10 @@
-import app from '../../firebase';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const SignUp = () => {
     const handleSignUp = async (event) => {
         event.preventDefault();
         const { email, password } = event.target.elements;
-        const auth = getAuth(app);
         try {
             const user = await createUserWithEmailAndPassword(
                 auth,
