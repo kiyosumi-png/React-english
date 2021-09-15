@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { db } from '../../../firebase';
 import styled from 'styled-components';
+import { collection, addDoc } from 'firebase/firestore/lite';
+
 import Button from '../Button';
+import { db } from '../../../firebase';
 
 function PostBox() {
     const [english, setEnglish] = useState('');
@@ -13,21 +15,21 @@ function PostBox() {
 
         switch (type) {
             case 'tech':
-                db.collection('tech-words').add({
+                addDoc(collection(db, 'tech-words'), {
                     english: english,
                     japanese: japanese,
                 });
                 break;
 
             case 'youtube':
-                db.collection('youtube-words').add({
+                addDoc(collection(db, 'youtube-words'), {
                     english: english,
                     japanese: japanese,
                 });
                 break;
 
             case 'daily':
-                db.collection('daily-words').add({
+                addDoc(collection(db, 'daily-words'), {
                     english: english,
                     japanese: japanese,
                 });

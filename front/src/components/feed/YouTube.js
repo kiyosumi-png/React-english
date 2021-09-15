@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { db } from '../../firebase';
 
+import { db } from '../../firebase';
 import Text from './Text';
 
 function useYouTubeWords() {
@@ -25,8 +25,12 @@ export default function YouTube() {
 
     return (
         <Container>
-            {words.map((word) => (
-                <Text english={word.english} japanese={word.japanese} />
+            {words.map((word, index) => (
+                <Text
+                    english={word.english}
+                    japanese={word.japanese}
+                    key={index}
+                />
             ))}
         </Container>
     );
