@@ -1,17 +1,21 @@
-import { auth } from '../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useHistory } from 'react-router-dom';
+
+import { auth } from '../../firebase';
 
 const SignUp = () => {
+    const history = useHistory();
+
     const handleSignUp = async (event) => {
         event.preventDefault();
         const { email, password } = event.target.elements;
         try {
-            const user = await createUserWithEmailAndPassword(
+            await createUserWithEmailAndPassword(
                 auth,
                 email.value,
                 password.value
             );
-            console.log('user', user);
+            history.push('/');
         } catch (error) {
             alert(error);
         }

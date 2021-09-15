@@ -1,14 +1,18 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useHistory } from 'react-router-dom';
 
 import { auth } from '../../firebase';
 
 const SignIn = () => {
+    const history = useHistory();
+
     const handleSignIn = async (event) => {
         event.preventDefault();
         const { email, password } = event.target.elements;
 
         try {
-            signInWithEmailAndPassword(auth, email.value, password.value);
+            await signInWithEmailAndPassword(auth, email.value, password.value);
+            history.push('/');
         } catch (error) {
             alert(error);
         }
