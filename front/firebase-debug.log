@@ -1,0 +1,70 @@
+[debug] [2021-10-07T08:34:23.211Z] ----------------------------------------------------------------------
+[debug] [2021-10-07T08:34:23.216Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kiyo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-10-07T08:34:23.217Z] CLI Version:   9.12.0
+[debug] [2021-10-07T08:34:23.218Z] Platform:      win32
+[debug] [2021-10-07T08:34:23.218Z] Node Version:  v14.16.1
+[debug] [2021-10-07T08:34:23.230Z] Time:          Thu Oct 07 2021 17:34:23 GMT+0900 (日本標準時)
+[debug] [2021-10-07T08:34:23.231Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-10-07T08:34:23.302Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-07T08:34:23.302Z] > authorizing via signed-in user (shoudaoqingcheng3@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\kiyo\React-english\front
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using useful-english-68bf4. 
+[debug] [2021-10-07T08:34:45.169Z] > refreshing access token with scopes: []
+[debug] [2021-10-07T08:34:45.170Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-10-07T08:34:45.506Z] <<< HTTP RESPONSE 200 {"date":"Thu, 07 Oct 2021 08:34:32 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-10-07T08:34:45.590Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/useful-english-68bf4 [none]
+[debug] [2021-10-07T08:34:46.094Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/useful-english-68bf4 200
+[debug] [2021-10-07T08:34:46.095Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/useful-english-68bf4 {"projectId":"useful-english-68bf4","projectNumber":"1053134111648","displayName":"useful-english","name":"projects/useful-english-68bf4","resources":{"hostingSite":"useful-english-68bf4","storageBucket":"useful-english-68bf4.appspot.com","locationId":"asia-northeast1"},"state":"ACTIVE"}
+[info] 
+=== Firestore Setup
+[debug] [2021-10-07T08:34:46.099Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-10-07T08:34:46.099Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-10-07T08:34:46.231Z] <<< HTTP RESPONSE 200 {"date":"Thu, 07 Oct 2021 08:34:33 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-10-07T08:34:46.309Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/useful-english-68bf4/services/firestore.googleapis.com  
+ 
+[debug] [2021-10-07T08:34:47.512Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 07 Oct 2021 08:34:34 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-10-07T08:34:47.515Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/useful-english-68bf4  
+ 
+[debug] [2021-10-07T08:34:47.913Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 07 Oct 2021 08:34:34 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-10-07T08:34:47.914Z] database_type: CLOUD_FIRESTORE
+[debug] [2021-10-07T08:34:47.915Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-07T08:34:47.916Z] > authorizing via signed-in user (shoudaoqingcheng3@gmail.com)
+[debug] [2021-10-07T08:34:47.916Z] [iam] checking project useful-english-68bf4 for permissions ["firebase.projects.get"]
+[debug] [2021-10-07T08:34:47.917Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/useful-english-68bf4:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-10-07T08:34:48.733Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 07 Oct 2021 08:34:35 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=608","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
